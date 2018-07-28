@@ -14,5 +14,25 @@
 
 
 <ion-content padding>
-tab1 content
+ <ion-list>
+   <ion-list-header  *ngFor="let item of information; let i =index" no-padding>
+     <button ion-item (click)='toggleSection(i)'>
+       <ion-icon item-left name='arrow-forward'  *ngIf='!item.open'></ion-icon>
+       <ion-icon item-left name='arrow-down'  *ngIf='item.open'></ion-icon>
+       {{item.name}}
+       
+     </button>
+ <ion-list *ngIf="item.children && item.open">
+  <ion-list-header *ngFor="let child of item.children; let j =index" no-padding>
+      <button ion-item (click)='toggleItem(i,j)'>
+         
+          {{child.description}}
+          <ion-icon item-end name="map" (click)="gotomap()"></ion-icon>
+        </button>
+  </ion-list-header>
+</ion-list> 
+
+
+   </ion-list-header>
+ </ion-list>
 </ion-content>

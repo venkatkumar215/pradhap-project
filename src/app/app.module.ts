@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+import {HttpModule} from '@angular/http'
 //import { HomePage } from '../pages/home/home';
 //import { LoginPage } from '../pages/login/login';
 //import {MenuPage} from '../pages/menu/menu';
@@ -18,7 +19,8 @@ import { MyApp } from './app.component';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
